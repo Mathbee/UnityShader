@@ -5,3 +5,4 @@
 
  * [Unity Surface Shader输入结构体的定义](https://blog.csdn.net/fly_net_cn/article/details/48291069)
  * [Unity Shader基本数据类型](https://www.cnblogs.com/SeaSwallow/p/6893418.html)
+ * [unity标准Shader的十种贴图类型](https://blog.csdn.net/weixin_39923777/article/details/83040113)
