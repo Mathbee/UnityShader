@@ -38,7 +38,15 @@
 			float2 uv_BumpMap;
 			INTERNAL_DATA
 		};
-
+		//Albedo：漫反射颜色
+		//Normal：法线
+		//Emission：自发光颜色
+		//Specular：镜面反射系数
+		//Gloss：亮度系数
+		//Alpha：透明值
+		//边缘着色函数half rim = 1.0-saturate(dot(normalize(In.viewDir),o.Normal))
+		//材质立方体反射函数fixed4 reflcol = texCUBE(_Cube, worldRefl)
+		//自发光函数o.Emission = reflcol.rgb * _ReflectColor.rgb + _RimColor.rgb * pow(rim, )RimPower)
 		void surf(Input IN, inout SurfaceOutput o) {
 			fixed4 tex = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 			fixed4 c = tex * _Color;

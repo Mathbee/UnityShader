@@ -55,11 +55,6 @@ Shader "Custom/Chapter5-Step"
 			
 			o.Gloss = _Gloss * c.a;
 		}
-		//1. Specular
-		//可以是高光贴图也可以是高光颜色 
-		//2. Gloss
-		//默认值为0.5 
-		//gloss用来调制亮斑的大小，一般来讲，gloss越大，光斑越细小，gloss越大，光斑分布越广泛 
 		ENDCG
 	}
 	FallBack "Disfuse"
