@@ -27,18 +27,19 @@ Shader "Custom/Chapter5-StepClone"
 		};
 		sampler2D _NormalTex;
 		sampler2D _MainTex;
-		sampler2D _Color;
 		sampler2D _Detail;
 		float4 _RimColor;
 		float _RimPow;
+		float4 _Color;
 
 		void surf(Input IN, inout SurfaceOutput o) {
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * IN.color;
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
 			if(pow(IN.uv_MainTex.x,2) + pow(IN.uv_MainTex.y,2)<=1){
-				c = tex2D(_Color, IN.uv_MainTex);
+				//c = tex2D(_Color, IN.uv_MainTex);
+				c = _Color;
 			}
 			o.Albedo = c.rgb;
-			o.Albedo *= tex2D(_Detail, IN.uv_Detail).rgb * 4;
+			//o.Albedo *= tex2D(_Detail, IN.uv_Detail).rgb * 4;
 			o.Alpha = 1;
 			o.Normal = UnpackNormal(tex2D(_NormalTex, IN.uv_BumpMap));
 			//b=saturate(a),若a<0,b=0;若a>1,b=1;否则b=a 
