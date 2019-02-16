@@ -24,11 +24,12 @@ Shader "Custom/FalseColor"
 				o.pos = UnityObjectToClipPos(v.vertex);
 				
 				//可视化法线方向,法线的每个方向上分量范围为(-1,1)
-				o.color = fixed4(v.normal * 0.5 + fixed3(0.5, 0.5, 0.5), 1.0);
+				o.color = fixed4(v.normal * 0.5 + fixed3( 0.5, 0.5, 0.5), 1.0);
 
 				//可视化切线方向,同法线
 				o.color *= fixed4(v.tangent * 0.5 + fixed3(0.5, 0.5, 0.5), 1.0);
 				//可以直接将颜色赋值为颜色输出，来进行调试
+
 				return o;
 			}	
 
